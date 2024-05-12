@@ -44,4 +44,10 @@ public class EventsController {
         Map<String, Object> response = eventsService.deleteEventByEventId(events);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
+
+    @PostMapping(value = "/getallevents", produces = "application/json")
+    public ResponseEntity<Map<String, Object>> getAllEvents(){
+        Map<String, Object> response = eventsService.getAllEvents();
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
 }

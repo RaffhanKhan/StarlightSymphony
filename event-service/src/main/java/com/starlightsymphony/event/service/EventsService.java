@@ -14,4 +14,6 @@ public interface EventsService {
     Map<String, Object> updateEvent(Events events);
 
     Map<String, Object> deleteEventByEventId(Events events);
+
+    Map<String, Object> getAllEvents();
 }

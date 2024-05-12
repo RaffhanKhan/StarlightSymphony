@@ -9,7 +9,9 @@
     <packaging>pom</packaging>
     <description>Root pom of StarlightSymphony</description>
     <modules>
-        <module>event</module>
+        <module>event-service</module>
+        <module>eurekaserver</module>
+        <module>gateway</module>
     </modules>
 
 </project>

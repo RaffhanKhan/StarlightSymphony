@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -117,6 +118,18 @@ public class EventsServiceImpl implements EventsService{
         response.put(EventConstants.PAYLOAD, new ErrorResponse(EventConstants.SUCCESS, "2005", "Deleted event successfully"));
         LOGGER.debug("EXIT-deleteEventByEventId-{}", response);
 
+        return response;
+    }
+
+    @Override
+    public Map<String, Object> getAllEvents() {
+        LOGGER.debug("ENTER-getAllEvents");
+
+        List<Events> eventsList = eventsRepository.findAll();
+        eventsList.sort(Comparator.comparing(Events::getStartDate));
+        Map<String, Object> response = new HashMap<>();
+        response.put("eventsList", eventsList);
+        response.put(EventConstants.STATUS, EventConstants.STATUS);
         return response;
     }
 

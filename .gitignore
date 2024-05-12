@@ -32,6 +32,14 @@ build/
 ### VS Code ###
 .vscode/
 
-event/.mvn/
-event/mvnw
-event/mvnw.cmd
+event-service/.mvn/
+event-service/mvnw
+event-service/mvnw.cmd
+
+gateway/.mvn/
+gateway/mvnw
+gateway/mvnw.cmd
+
+eurekaserver/.mvn/
+eurekaserver/mvnw
+eurekaserver/mvnw.cmd

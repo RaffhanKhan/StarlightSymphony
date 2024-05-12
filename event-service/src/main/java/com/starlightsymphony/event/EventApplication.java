@@ -6,6 +6,8 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
@@ -23,6 +25,8 @@ import java.util.Locale;
 
 @SpringBootApplication
 @RequiredArgsConstructor
+@RefreshScope
+@EnableDiscoveryClient
 @EnableJpaRepositories(basePackages = "com.starlightsymphony.event", entityManagerFactoryRef = "starlightsymphonyEntityManager", transactionManagerRef = "platformTransactionManager")
 @PropertySource({"classpath:application.properties","classpath:event.properties","classpath:bootstrap.properties"})
 public class EventApplication extends SpringBootServletInitializer implements WebApplicationInitializer {
